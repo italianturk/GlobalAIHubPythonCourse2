@@ -9,13 +9,17 @@ y = int(input("Top value of the range(y): "))
 
 for i in range(x,y): #Program search for values between X and Y
     if i > 1:
+        prime = True
         for n in range(2, i):
             if(i % n) == 0:
+                prime = False
                 break
-            else:
-                pnumlis.append(i) #Prime numbers between X and Y have been added to the list.
+        if prime:
+             pnumlis.append(i) #Prime numbers between X and Y have been added to the list.
 
 pnumlis = list(dict.fromkeys(pnumlis)) #Removed duplicated values from prime numbers list.
+
+print(pnumlis)
 for j in pnumlis:
     random.shuffle(pnumlis) #Defined random.shuffle for unique values that comes from pnumlist.
     if len(list1) < 3:      #Program will ad maximum three values to lists.
